@@ -171,8 +171,8 @@ ynh_use_nodejs
     #cd ep_etherpad-lite
     chown -R $app: $final_path
     #ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" install --save --loglevel warn
-    ynh_exec_as $app bin/run.sh
-    ynh_exec_as $app bin/installDeps.sh
+    ynh_exec_as $app PATH="$nodejs_path:$PATH" bin/run.sh
+    ynh_exec_as $app PATH="$nodejs_path:$PATH" bin/installDeps.sh
 )
 
 #=================================================
