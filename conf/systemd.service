@@ -6,9 +6,10 @@ After=syslog.target network.target
 Type=simple
 User=__APP__
 Group=__APP__
-Environment="PATH=__ENV_PATH__"
+WorkingDirectory=__FINALPATH__/
 Environment=NODE_ENV=production
-ExecStart=__FINALPATH__/bin/safeRun.sh /var/log/__APP__/etherpad.log
+ExecStart=/usr/bin/nodejs --experimental-worker __FINALPATH__/node_modules/ep_etherpad-lite/node/server.js
+# use mysql plus a complete settings.json to avoid Service hold-off time over, scheduling restart.
 Restart=always
 
 [Install]
