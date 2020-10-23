@@ -30,7 +30,7 @@ Vous pouvez accéder à deux panneaux d'administration différents, pour Etherpa
 
 ## Documentation
 
- * Documentation officielle : http://etherpad.org/doc/v1.8.4
+ * Documentation officielle : http://etherpad.org/doc/v1.8.6
  * Documentation YunoHost : https://yunohost.org/#/app_etherpad_mypads_fr
 
 ## Fonctionnalités spécifiques à YunoHost
@@ -60,7 +60,7 @@ Vous pouvez accéder à deux panneaux d'administration différents, pour Etherpa
   * [ep_font_size](https://www.npmjs.com/package/ep_font_size) - *Permet de définir la taille de la police*.
   * [ep_headings2](https://www.npmjs.com/package/ep_headings2) - *Ajoute le support de titre à Etherpad Lite.*
   * [ep_markdown](https://www.npmjs.com/package/ep_markdown) - *Modifier et exporter en tant que Markdown dans Etherpad*
-  * [ep_mypads](https://www.npmjs.com/package/ep_mypads) - *Groupes et pads privés pour etherpad*
+  * [ep_mypads](https://www.npmjs.com/package/ep_mypads) - *Groupes et pads privés pour Etherpad*
   * [ep_page_view](https://www.npmjs.com/package/ep_page_view) - *Ajouter la prise en charge de 'page view', avec une option d'activation/désactivation dans Paramètres, ainsi que 'Page Breaks' avec Control + Entrée*
   * [ep_spellcheck](https://www.npmjs.com/package/ep_spellcheck) - *Ajouter le support pour faire de la vérification orthographique*
   * [ep_subscript_and_superscript](https://www.npmjs.com/package/ep_subscript_and_superscript) - *Ajouter la prise en charge de Subscript et Superscript*.

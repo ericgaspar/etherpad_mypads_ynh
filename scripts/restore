@@ -7,8 +7,6 @@
 #=================================================
 
 # Load common variables for all scripts.
-source ../settings/scripts/_variables
-
 source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
@@ -173,7 +171,7 @@ ynh_systemd_action --action=reload --service_name=nginx
 ynh_script_progression --message="Restarting Etherpad..." --weight=8
 
 # Wait for etherpad to be fully started
-ynh_systemd_action --action=restart --line_match="You can access your Etherpad instance at" --log_path="/var/log/$app/etherpad.log" --timeout="120"
+ynh_systemd_action --action=restart --log_path="systemd" --line_match="You can access your Etherpad instance at"
 
 #=================================================
 # DEACTIVE MAINTENANCE MODE

@@ -31,7 +31,7 @@ You can also find a configuration file for Etherpad at this path `/var/www/ether
 
 ## Documentation
 
- * Official documentation: http://etherpad.org/doc/v1.8.4
+ * Official documentation: http://etherpad.org/doc/v1.8.6
  * YunoHost documentation: https://yunohost.org/#/app_etherpad_mypads
 
 ## YunoHost specific features
@@ -61,7 +61,7 @@ You can also find a configuration file for Etherpad at this path `/var/www/ether
   * [ep_font_size](https://www.npmjs.com/package/ep_font_size) - *Add support for Font Sizes*
   * [ep_headings2](https://www.npmjs.com/package/ep_headings2) - *Adds heading support to Etherpad Lite.*
   * [ep_markdown](https://www.npmjs.com/package/ep_markdown) - *Edit and Export as Markdown in Etherpad*
-  * [ep_mypads](https://www.npmjs.com/package/ep_mypads) - *Groups and private pads for etherpad*
+  * [ep_mypads](https://www.npmjs.com/package/ep_mypads) - *Groups and private pads for Etherpad*
   * [ep_page_view](https://www.npmjs.com/package/ep_page_view) - *Add support to do 'page view', with a toggle on/off option in Settings, also Page Breaks with Control Enter*
   * [ep_spellcheck](https://www.npmjs.com/package/ep_spellcheck) - *Add support to do 'Spell checking'*
   * [ep_subscript_and_superscript](https://www.npmjs.com/package/ep_subscript_and_superscript) - *Add support for Subscript and Superscript*
