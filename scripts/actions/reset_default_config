@@ -58,20 +58,20 @@ then
 	ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="$final_path/settings.json"
 	if [ "$export" = "abiword" ]
 	then
-		# Get abiword binary path
+		# Get AbiWord binary path
 		abiword_path=`which abiword`
-		# Set the path of abiword into etherpad config
+		# Set the path of AbiWord into Etherpad config
 		ynh_replace_string --match_string="\"abiword\" : null" --replace_string="\"abiword\" : \"$abiword_path\"" --target_file="$final_path/settings.json"
 	elif [ "$export" = "libreoffice" ]
 	then
 		# Get soffice binary path
 		soffice_path=`which soffice`
-		# Set the path of soffice into etherpad config
+		# Set the path of soffice into Etherpad config
 		ynh_replace_string --match_string="\"soffice\" : null" --replace_string="\"soffice\" : \"$soffice_path\"" --target_file="$final_path/settings.json"
 	fi
 	ynh_replace_string --match_string="__LANGUAGE__" --replace_string="$language" --target_file="$final_path/settings.json"
 
-	# Use ldap for mypads
+	# Use LDAP for MyPads
 	if [ $mypads -eq 1 ] && [ $useldap -eq 1 ]
 	then
 		ynh_replace_string --match_string="//noldap\(.*\)" --replace_string="\1 //useldap" --target_file="$final_path/settings.json"
@@ -86,7 +86,7 @@ ynh_store_file_checksum --file="$config_file"
 #=================================================
 ynh_script_progression --message="Restarting Etherpad..." --weight=9
 
-# Wait for etherpad to be fully started
+# Wait for Etherpad to be fully started
 ynh_systemd_action --action=restart --line_match="You can access your Etherpad instance at" --log_path="/var/log/$app/etherpad.log" --timeout="120"
 
 #=================================================

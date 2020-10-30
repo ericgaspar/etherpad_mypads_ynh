@@ -50,11 +50,11 @@ ynh_print_info --message="Abiword will be $action1."
 
 if apt-cache depends ${app//_/-}-ynh-deps | grep --quiet libreoffice-writer
 then
-	# libreoffice is already a dependence of etherpad_mypads.
+	# LibreOffice is already a dependence of etherpad_mypads.
 	# Keep it
 	libreoffice=1
 else
-	# libreoffice isn't a dependence of etherpad_mypads.
+	# LibreOffice isn't a dependence of etherpad_mypads.
 	# Do not add it
 	libreoffice=0
 fi
@@ -67,18 +67,18 @@ fi
 
 ynh_script_progression --message="$action2 AbiWord..." --weight=3
 
-# Load common variables, and especially abiword dependencies.
+# Load common variables, and especially AbiWord dependencies.
 source scripts/_variables
 
 dependencies=""
 if [ $abiword -eq 1 ]
 then
-	# Add abiword dependencies if abiword has to be installed
+	# Add AbiWord dependencies if abiword has to be installed
 	dependencies="$dependencies $abiword_app_depencencies"
 fi
 if [ $libreoffice -eq 1 ]
 then
-	# Add libreoffice dependencies if libreoffice is already installed to keep it as a dependence.
+	# Add LibreOffice dependencies if LibreOffice is already installed to keep it as a dependence.
 	dependencies="$dependencies $libreoffice_app_dependencies"
 fi
 
@@ -95,11 +95,11 @@ ynh_package_autopurge
 
 if [ $abiword -eq 1 ]
 then
-	# Set abiword as default export app
+	# Set AbiWord as default export app
 	yunohost app config apply $app -a "YNH_CONFIG_MAIN_EXPORT_EXPORT=abiword"
 elif [ $libreoffice -eq 1 ]
 then
-	# Set libreoffice as default export app
+	# Set LibreOffice as default export app
 	yunohost app config apply $app -a "YNH_CONFIG_MAIN_EXPORT_EXPORT=libreoffice"
 else
 	# Remove any export app
