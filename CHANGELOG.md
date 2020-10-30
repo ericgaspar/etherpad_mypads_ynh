@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## [1.8.6~ynh1]() - 2020-10-30
+
+#### Changed
+* [Upgrade to 1.8.6]()
+* [Upgrade packages to upstream]()
+
+
 ## [1.8.4~ynh1](https://github.com/YunoHost-Apps/etherpad_mypads_ynh/pull/105) - 2020-08-09
 
 #### Changed
@@ -11,6 +18,7 @@ Changelog
 
 #### Disabled
 * [ep_countable plugin (not working with this version)](https://github.com/YunoHost-Apps/etherpad_mypads_ynh/pull/105/commits/0a0d26cc5cadb5d51ae0e8dbbef41c9488af2433)
+
 
 ## [1.8.0~ynh1](https://github.com/YunoHost-Apps/etherpad_mypads_ynh/pull/74) - 2019-10-08
 
@@ -25,6 +33,7 @@ Changelog
 * [Upgrade to 1.8.0](https://github.com/YunoHost-Apps/etherpad_mypads_ynh/pull/78)
 * [Update to mypads 1.7.10](https://github.com/YunoHost-Apps/etherpad_mypads_ynh/pull/74/commits/00060c99db7f0fcac57c910256a37b6deeb8c2fe)
 * [Allow to enable or disable automatic logout](https://github.com/YunoHost-Apps/etherpad_mypads_ynh/pull/74/commits/fdc8d6cbdd8eb0931336311d53857dad7f966d93)
+
 
 ## [1.7.5~ynh2](https://github.com/YunoHost-Apps/etherpad_mypads_ynh/pull/69) - 2019-05-26
 
