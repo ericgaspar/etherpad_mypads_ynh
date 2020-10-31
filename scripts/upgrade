@@ -46,7 +46,7 @@ pad_config_skinname=$(ynh_app_setting_get --app=$app --key=pad_config_skinname)
 #=================================================
 
 # Wait for Etherpad to be fully started
-ynh_systemd_action --action=restart --line_match="You can access your Etherpad instance at" --log_path="/var/log/$app/etherpad.log" --timeout="120"
+ynh_systemd_action --action=restart --log_path="systemd" --line_match="You can access your Etherpad instance at"
 
 upgrade_type=$(ynh_check_app_version_changed)
 
@@ -233,8 +233,10 @@ do
     if [ -n "${module_version}" ]; then
         module_version=@${module_version}
     fi
-    ynh_exec_warn_less ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" install --upgrade ${node_module}${module_version} || true
+    ynh_exec_warn_less ynh_exec_as $app env "$ynh_node_load_PATH" install --upgrade ${node_module}${module_version} || true
 done <<< "$(ls -1 "$final_path/node_modules" | grep "^ep_")")
+
+#PATH="$nodejs_path:$PATH" "$nodejs_path/npm"
 
 #=================================================
 # SPECIFIC UPGRADE
@@ -449,7 +451,7 @@ You can also find a config file for Etherpad at this path /var/www/etherpad_mypa
 You can configure this app easily by using the experimental config-panel feature $admin_panel/config-panel.
 You can also find some specific actions for this app by using the experimental action feature $admin_panel/actions.
 
-If you are facing an issue or want to improve this app, please open a new issue in this project: https://github.com/YunoHost-Apps/etherpad_mypads_ynh
+If you are facing an issue or want to improve Etherpad, please open a new issue in this project: https://github.com/YunoHost-Apps/etherpad_mypads_ynh
 
 ---
 
