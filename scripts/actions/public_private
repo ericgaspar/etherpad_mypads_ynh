@@ -54,7 +54,7 @@ ynh_script_progression --message="Moving the application to $public_private..." 
 
 if [ $is_public -eq 0 ]
 then
-	ynh_app_setting_set --app=$app --key=skipped_uris --value="/admin"	# etherpad admin page doesn't support SSO...
+	ynh_app_setting_set --app=$app --key=skipped_uris --value="/admin"	# Etherpad admin page doesn't support SSO...
 else
 	ynh_app_setting_set --app=$app --key=skipped_uris --value="/"
 fi

@@ -90,7 +90,7 @@ if [ "$pad_config_skinname" = "no-skin" ]; then
     pad_config_skinname=noskin
 fi
 
-# Mypads
+# MyPads
 if [ -d $final_path/node_modules/ep_mypads ]
 then
     # Enable

@@ -87,10 +87,10 @@ ynh_store_file_checksum --file="$config_file"
 ynh_script_progression --message="Restarting Etherpad..." --weight=9
 
 # Wait for Etherpad to be fully started
-ynh_systemd_action --action=restart --line_match="You can access your Etherpad instance at" --log_path="/var/log/$app/etherpad.log" --timeout="120"
+ynh_systemd_action --action=restart --log_path="systemd" --line_match="You can access your Etherpad instance at"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression --message="Upgrade of Etherpad completed" --last

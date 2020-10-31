@@ -18,14 +18,14 @@ libreoffice_app_dependencies="unoconv libreoffice-writer"
 mypads_version=1.7.17
 
 # Plugin versions
-ep_align_version=0.2.18
+ep_align_version=0.2.22
 ep_author_hover_version=0.3.2
 ep_automatic_logut_version=1.0.8
-ep_comments_page_version=0.1.10
+ep_comments_page_version=0.1.13
 ep_delete_empty_pads_version=0.0.6
-ep_font_color_version=0.0.20
+ep_font_color_version=0.0.22
 ep_font_size_version=0.4.0
-ep_headings2_version=0.1.10
+ep_headings2_version=0.1.12
 ep_markdown_version=0.1.10
 ep_page_view_version=0.5.26
 ep_spellcheck_version=0.0.11
