@@ -136,7 +136,7 @@ fi
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
-ynh_script_progression --message="Backing up the app before upgrading (may take a while)..." --weight=35
+ynh_script_progression --message="Backing up Etherpad before upgrading (may take a while)..." --weight=35
 
 # Backup the current version of the app
 ynh_backup_before_upgrade
@@ -462,4 +462,4 @@ ynh_send_readme_to_admin --app_message="mail_to_send" --recipients="$admin" --ty
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression --message="Upgrade of Etherpad completed" --last
