@@ -126,7 +126,7 @@ ynh_install_nodejs --nodejs_version=$nodejs_version
 ynh_script_progression --message="Reinstalling Etherpad node dependencies..." --weight=17
 
 ynh_use_nodejs
-ynh_exec_warn_less npm cache clean --force
+ynh_exec_warn_less ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" cache clean --force
 
 #=================================================
 # RESTORE USER RIGHTS
@@ -139,7 +139,7 @@ chown -R $app: $final_path
 # ADVERTISE SERVICE IN ADMIN PANEL
 #=================================================
 
-yunohost service add $app --log "/var/log/$app/etherpad.log"
+yunohost service add $app --description "Etherpad, the collaborative editor." --log "/var/log/$app/etherpad.log"
 
 #=================================================
 # RESTORE SYSTEMD
