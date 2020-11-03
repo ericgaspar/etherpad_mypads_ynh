@@ -197,13 +197,13 @@ ynh_script_progression --message="Upgrading Etherpad npm modules..." --weight=60
 # Update the main modules of Etherpad
 chown -R $app: $final_path
 (cd "$final_path/src"
-ynh_exec_warn_less ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" cache clean --force
-ynh_exec_warn_less ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" install
-ynh_exec_warn_less ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" update)
+ynh_exec_warn_less npm cache clean --force
+ynh_exec_warn_less ynh_exec_as $app env "$ynh_node_load_PATH" npm install
+ynh_exec_warn_less ynh_exec_as $app env "$ynh_node_load_PATH" npm update)
 
 # Then update the additionnal modules
 (cd "$final_path"
-ynh_exec_warn_less ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" cache clean --force
+ynh_exec_warn_less ynh_exec_as $app env "$ynh_node_load_PATH" npm cache clean --force
 while read node_module
 do
     # Ignore ep_etherpad-lite, this part is updated before in this script.
@@ -221,7 +221,7 @@ do
     if [ -n "${module_version}" ]; then
         module_version=@${module_version}
     fi
-    ynh_exec_warn_less ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" install --upgrade ${node_module}${module_version} || true
+    ynh_exec_warn_less ynh_exec_as $app env "$ynh_node_load_PATH" npm install --upgrade ${node_module}${module_version} || true
 done <<< "$(ls -1 "$final_path/node_modules" | grep "^ep_")")
 
 #=================================================
