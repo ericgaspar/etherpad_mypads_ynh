@@ -329,7 +329,7 @@ then
 	mysql -u $db_name -p$db_pwd $db_name < "../conf/lang_mypads.sql"
 
 	# Wait for Etherpad to be fully started
-	ynh_systemd_action --action=start --line_match="Your Etherpad version is" --log_path="systemd" --timeout="60"
+	ynh_systemd_action --action=restart --line_match="Your Etherpad version is" --log_path="systemd" --timeout="60"
 fi
 
 #=================================================
