@@ -229,27 +229,27 @@ pushd "$final_path" || ynh_die
   ynh_exec_as $app env $ynh_node_load_PATH bin/installDeps.sh
 
 
-# # Then update the additionnal modules
-#   ynh_exec_warn_less npm cache clean --force
-#   while read node_module
-#   do
-#       # Ignore ep_etherpad-lite, this part is updated before in this script.
-#       if [ "$node_module" = "ep_etherpad-lite" ]; then
-#           continue
-#       fi
-#       echo "Update $node_module"
-#       # Build the name of the variable with the version.
-#       module_version=${node_module}_version
-#       # Get the content of the variable (from the file _variables)
-#       module_version=${!module_version:-}
-#       # If the module has no version stored in a variable into the file, keep it empty.
-#       # That way, the upgrade will not be specific to a version.
-#       ## Otherwise, add @ before the version number to force the upgrade to this version.
-#       if [ -n "${module_version}" ]; then
-#           module_version=@${module_version}
-#       fi
-#       ynh_exec_warn_less ynh_exec_as $app env "$ynh_node_load_PATH" "$nodejs_path/npm" install --upgrade ${node_module}${module_version} || true
-#   done <<< "$(ls -1 "$final_path/node_modules" | grep "^ep_")"
+# Then update the additionnal modules
+  ynh_exec_warn_less npm cache clean --force
+  while read node_module
+  do
+      # Ignore ep_etherpad-lite, this part is updated before in this script.
+      if [ "$node_module" = "ep_etherpad-lite" ]; then
+          continue
+      fi
+      echo "Update $node_module"
+      # Build the name of the variable with the version.
+      module_version=${node_module}_version
+      # Get the content of the variable (from the file _variables)
+      module_version=${!module_version:-}
+      # If the module has no version stored in a variable into the file, keep it empty.
+      # That way, the upgrade will not be specific to a version.
+      ## Otherwise, add @ before the version number to force the upgrade to this version.
+      if [ -n "${module_version}" ]; then
+          module_version=@${module_version}
+      fi
+      ynh_exec_warn_less ynh_exec_as $app env "$ynh_node_load_PATH" "$nodejs_path/npm" install --upgrade ${node_module}${module_version} || true
+  done <<< "$(ls -1 "$final_path/node_modules" | grep "^ep_")"
 popd || ynh_die
 
 #=================================================
