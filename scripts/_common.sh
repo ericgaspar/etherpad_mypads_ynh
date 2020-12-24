@@ -4,6 +4,19 @@
 # PERSONAL HELPERS
 #=================================================
 
+# Dependencies for AbiWord
+abiword_app_depencencies="abiword"
+
+# Dependencies for LibreOffice
+libreoffice_app_dependencies="unoconv libreoffice-writer"
+
+# NodeJS version
+nodejs_version=12
+
+# MyPads version
+# This variable is mostly used to force an upgrade of the package in case of new versions of MyPads.
+mypads_version=1.7.18
+
 #=================================================
 # FUTUR OFFICIAL HELPERS
 #=================================================
